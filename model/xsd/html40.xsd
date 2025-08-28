@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.w3.org/TR/REC-html40"
+  xmlns="http://www.w3.org/TR/REC-html40"
+  xmlns:office="urn:schemas-microsoft-com:office:office"
+  xmlns:odc="urn:schemas-microsoft-com:office:odc"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+  <xs:import
+    namespace="urn:schemas-microsoft-com:office:office"
+    schemaLocation="../xsd/office.xsd" />
+
+  <xs:import
+    namespace="urn:schemas-microsoft-com:office:odc"
+    schemaLocation="../xsd/odc.xsd" />
+
+  <xs:element name="html">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="head" type="HeadType" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="HeadType">
+    <xs:sequence>
+      <xs:element name="meta" type="MetaType" minOccurs="0"
+        maxOccurs="unbounded" />
+      <xs:element name="title" type="xs:string" minOccurs="0" />
+      <xs:element name="xml" type="XmlIslandType" minOccurs="0"
+        maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="XmlIslandType">
+    <xs:sequence>
+      <xs:element ref="office:DocumentProperties" minOccurs="1" maxOccurs="1" />
+      <xs:element ref="odc:OfficeDataConnection" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="id" type="xs:ID" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="MetaType">
+    <xs:attribute name="http-equiv" type="xs:string" use="optional" />
+    <xs:attribute name="name" type="xs:string" use="optional" />
+    <xs:attribute name="content" type="xs:string" use="optional" />
+    <xs:attribute name="charset" type="xs:string" use="optional" />
+  </xs:complexType>
+
+</xs:schema>
