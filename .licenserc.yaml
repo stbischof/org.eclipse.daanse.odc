@@ -46,6 +46,6 @@ header:
     - 'license.templates'
     - '**/logback-test.xml'
     - '**/*.svg'
-    - 'xsd/*.xsd'
+    - 'model/xsd/*.xsd'
 
   comment: always
