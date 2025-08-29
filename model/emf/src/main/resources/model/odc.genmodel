@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*********************************************************************
+* Copyright (c) 2024 Contributors to the Eclipse Foundation.
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which is available at https://www.eclipse.org/legal/epl-2.0/
+*
+* SPDX-License-Identifier: EPL-2.0
+**********************************************************************/
+-->
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.eclipse.daanse.odc.model.emf/src" modelPluginID="org.eclipse.daanse.odc.model.emf"
+    modelName="org.eclipse.daanse.rolap.mapping.emf" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true" oSGiCompatible="true">
+  <foreignModel>odc.ecore</foreignModel>
+  <genPackages prefix="Office" resource="XML" disposableProviderFactory="true" ecorePackage="odc.ecore#/0">
+    <genClasses ecoreClass="odc.ecore#/0/DocumentPropertiesType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/0/DocumentPropertiesType/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/0/DocumentPropertiesType/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/0/DocumentPropertiesType/keywords"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/0/DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/0/DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/0/DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/0/DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/0/DocumentRoot/documentProperties"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Html40" resource="XML" disposableProviderFactory="true" ecorePackage="odc.ecore#/1">
+    <genClasses ecoreClass="odc.ecore#/1/DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/1/DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/1/DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/DocumentRoot/html"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/1/HeadType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/HeadType/meta"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/HeadType/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/HeadType/xml"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/1/HtmlType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/HtmlType/head"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/1/MetaType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/MetaType/charset"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/MetaType/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/MetaType/httpEquiv"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/MetaType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/1/XmlIslandType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/XmlIslandType/documentProperties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/1/XmlIslandType/officeDataConnection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/1/XmlIslandType/id"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Odc" resource="XML" disposableProviderFactory="true" ecorePackage="odc.ecore#/2">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="odc.ecore#/2/STCommandType">
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/Table"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/SQL"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/Cube"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/List"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/Default"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCommandType/TableCollection"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="odc.ecore#/2/STConnectionType">
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STConnectionType/OLEDB"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STConnectionType/ODBC"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STConnectionType/DATAFEED"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="odc.ecore#/2/STCredentialsMethod">
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCredentialsMethod/Integrated"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCredentialsMethod/None"/>
+      <genEnumLiterals ecoreEnumLiteral="odc.ecore#/2/STCredentialsMethod/Stored"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="odc.ecore#/2/STCommandTypeObject"/>
+    <genDataTypes ecoreDataType="odc.ecore#/2/STConnectionTypeObject"/>
+    <genDataTypes ecoreDataType="odc.ecore#/2/STCredentialsMethodObject"/>
+    <genClasses ecoreClass="odc.ecore#/2/CTConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/connectionString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/commandType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/2/CTConnection/parameter"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/commandText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/sSOApplicationID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/credentialsMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/alwaysUseConnectionFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/culture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTConnection/type"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/2/CTParameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTParameter/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTParameter/dataType"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/2/CTPowerQueryConnection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/connectionString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/commandType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/commandText"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/sSOApplicationID"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/credentialsMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/alwaysUseConnectionFile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/CTPowerQueryConnection/type"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/2/OfficeDataConnectionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/OfficeDataConnectionType/sourceFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/2/OfficeDataConnectionType/connection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/2/OfficeDataConnectionType/powerQueryConnection"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/OfficeDataConnectionType/powerQueryMashupData"/>
+    </genClasses>
+    <genClasses ecoreClass="odc.ecore#/2/DocumentRoot">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EAttribute odc.ecore#/2/DocumentRoot/mixed"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/2/DocumentRoot/xMLNSPrefixMap"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference odc.ecore#/2/DocumentRoot/xSISchemaLocation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference odc.ecore#/2/DocumentRoot/officeDataConnection"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

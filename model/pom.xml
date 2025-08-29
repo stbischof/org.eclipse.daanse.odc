@@ -23,6 +23,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>jakarta.xml.bind</module>
-    <!--    <module>emf</module>-->
+    <module>emf</module>
   </modules>
 </project>
