@@ -16,14 +16,17 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.eclipse.daanse</groupId>
-    <artifactId>org.eclipse.daanse.odc</artifactId>
+    <artifactId>org.eclipse.daanse.odc.model</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>org.eclipse.daanse.odc.model</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>jakarta.xml.bind</module>
-    <module>emf</module>
-    <module>simple</module>
-  </modules>
+  <artifactId>org.eclipse.daanse.odc.model.simple</artifactId>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.10.0</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 </project>
